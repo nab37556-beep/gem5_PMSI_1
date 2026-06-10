@@ -1,0 +1,9 @@
+构建配置：build_opts/PMSI。这个文件告诉构建系统如何编译PMSI协议。
+
+系统连接：configs/ruby/PMSI.py。这个Python脚本定义了在Ruby内存系统中，各个组件（如缓存、总线、内存控制器）是如何连接起来的。
+
+协议规范：PMSI协议的具体状态和转换逻辑，通常定义在 src/mem/protocol/ 目录下的 .slicc 文件中。你需要在这个目录下寻找包含 pmsi 字样的文件，或者查看 MSI.slicc 的变体。
+
+可预测总线仲裁：src/cpu/testers/rubytest/Trace.hh。这个头文件里定义了TDM仲裁的关键参数，如核心数（NPROC）和时隙宽度（SLOT_WIDTH）。
+
+所以，PMSI的代码是集成在整个gem5项目结构中的，你可以通过上面的命令和路径提示去探索这些文件。如果在查找或阅读代码时遇到困难，随时可以再来问我。
